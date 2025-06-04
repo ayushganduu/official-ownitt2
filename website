@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ownitt Ltd. - Pure Water. Trusted Service. Delivered to Your Doorstep</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .ownitt-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+        }
+        .ownitt-logo {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .product-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+        .pride-gradient {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        .sky-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #000000 100%);
+        }
+        .curvv-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .olivar-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Entry Gate -->
+    <div id="entryGate" class="min-h-screen flex items-center justify-center ownitt-gradient">
+        <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4 fade-in">
+            <div class="text-center mb-8">
+                <!-- Actual Ownitt Logo -->
+                <div class="w-32 h-32 mx-auto mb-6 bg-black rounded-xl flex flex-col items-center justify-center p-4">
+                    <div class="ownitt-logo text-4xl font-bold mb-1">ON</div>
+                    <div class="text-gray-300 text-sm font-medium">ownitt</div>
+                    <div class="text-gray-400 text-xs">a step towards purity</div>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-4">Welcome to Ownitt Ltd.</h1>
+                <p class="text-gray-600 text-sm leading-relaxed">Your Trusted RO Purifier Partner!</p>
+                <p class="text-gray-600 text-sm mt-2">To serve you better and offer customized solutions, we kindly request your mobile number.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label for="mobileEntry" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>Enter Mobile Number (Required)
+                    </label>
+                    <input type="tel" id="mobileEntry" placeholder="Enter 10-digit mobile number" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                    <p id="mobileError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid 10-digit Indian mobile number</p>
+                </div>
+                
+                <button onclick="validateAndEnter()" 
+                        class="w-full ownitt-gradient text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-arrow-right mr-2"></i>Continue to Website
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website -->
+    <div id="mainWebsite" class="hidden">
+        <!-- Header -->
+        <header class="bg-white shadow-lg sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-black rounded-lg flex flex-col items-center justify-center p-1">
+                            <div class="ownitt-logo text-lg font-bold">ON</div>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-gray-800">Ownitt Ltd.</h1>
+                            <p class="text-xs text-gray-600">a step towards purity</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About Us</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    </nav>
+                    
+                    <div class="flex items-center space-x-4">
+                        <a href="tel:8007532084" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="ownitt-gradient text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-4xl mx-auto fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 floating">Pure Water. Trusted Service.</h1>
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-8">Delivered to Your Doorstep.</h2>
+                    <p class="text-xl md:text-2xl mb-12 opacity-90">Your One-Stop RO Purifier Sales & Service Partner</p>
+                    
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                        <button onclick="showQuotationForm()" 
+                                class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover-scale">
+                            <i class="fas fa-calculator mr-3"></i>Get Quotation
+                        </button>
+                        <button onclick="showServiceForm()" 
+                                class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover-scale">
+                            <i class="fas fa-tools mr-3"></i>Get Serviced
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <!-- Quotation Form -->
+                <div id="quotationFormSection" class="hidden max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 fade-in">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                        <i class="fas fa-calculator text-blue-600 mr-3"></i>Get Your RO Quotation
+                    </h3>
+                    <form id="quotation_form" onsubmit="submitForm(event, 'quotation')">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name (Required)</label>
+                                <input type="text" name="fullName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Mobile Number (Required)</label>
+                                <input type="tel" name="mobile" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Address (Optional)</label>
+                                <textarea name="address" rows="3" 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Service Form -->
+                <div id="serviceFormSection" class="hidden max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 fade-in">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                        <i class="fas fa-tools text-green-600 mr-3"></i>Book Your Service
+                    </h3>
+                    <form id="service_form" onsubmit="submitForm(event, 'service')">
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name (Required)</label>
+                                <input type="text" name="fullName" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Mobile Number (Required)</label>
+                                <input type="tel" name="mobile" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Address (Optional)</label>
+                                <textarea name="address" rows="3" 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Meet Our Founder</h2>
+                    <div class="w-24 h-1 ownitt-gradient mx-auto"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg">
+                    <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                        <div class="flex-shrink-0">
+                            <!-- Founder Image - Circular -->
+                            <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center overflow-hidden">
+                                <div class="w-28 h-28 bg-gray-300 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-3xl text-gray-600"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Ayush Shahu</h3>
+                            <p class="text-lg text-blue-600 font-semibold mb-4">Founder & Director</p>
+                            <p class="text-gray-600 mb-6 italic">"Committed to making clean water accessible with timely service and honest solutions."</p>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-center md:justify-start space-x-3">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                    <a href="tel:8767716824" class="text-gray-700 hover:text-green-600">8767716824</a>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start space-x-3">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                    <a href="mailto:ayushshahu91@gmail.com" class="text-gray-700 hover:text-blue-600">ayushshahu91@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Premium RO Products</h2>
+                    <div class="w-24 h-1 ownitt-gradient mx-auto"></div>
+                    <p class="text-gray-600 mt-4">Authentic products from our showroom inventory</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Pride Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 pride-gradient flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">PRIDE</div>
+                                <div class="text-sm">#newlylaunched</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Pride Series RO Purifiers</h3>
+                            <p class="text-gray-600 mb-2">Superb Multi Color Variants</p>
+                            <p class="text-gray-600 text-sm">• Unique LED Water Level Display</p>
+                            <p class="text-gray-600 text-sm">• Premium Quality</p>
+                            <p class="text-gray-600 text-sm">• Multiple Color Options</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sky Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 sky-gradient flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">SKY</div>
+                                <div class="text-sm">MIDNIGHT BLACK</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Sky Midnight Black</h3>
+                            <p class="text-gray-600 mb-2">Premium Quality</p>
+                            <p class="text-gray-600 text-sm">• Table top and Wall mount</p>
+                            <p class="text-gray-600 text-sm">• 9 Ltr storage</p>
+                            <p class="text-gray-600 text-sm">• Float, Clamp & Tap included</p>
+                            <p class="text-gray-600 text-sm">• Master packing of 2 pcs</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Curvv Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 curvv-gradient flex items-center justify-center border-2 border-gray-200">
+                            <div class="text-center text-gray-700">
+                                <div class="text-3xl font-bold mb-2">Curvv</div>
+                                <div class="text-sm">White RO Cabinet</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Curvv White RO Cabinet</h3>
+                            <p class="text-gray-600 mb-2">Modern Design</p>
+                            <p class="text-gray-600 text-sm">• Advanced Purification</p>
+                            <p class="text-gray-600 text-sm">• Elegant White Finish</p>
+                            <p class="text-gray-600 text-sm">• Compact Cabinet Design</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Olivar Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 olivar-gradient flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">OLIVAR</div>
+                                <div class="text-sm">INTERNATIONAL</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Olivar International</h3>
+                            <p class="text-gray-600 mb-2">Premium Mother Care Series</p>
+                            <p class="text-gray-600 text-sm">• Pure living for mothers</p>
+                            <p class="text-gray-600 text-sm">• Advanced filtration technology</p>
+                            <p class="text-gray-600 text-sm">• Health-focused design</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Mars Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-700 flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">MARS</div>
+                                <div class="text-sm">Modern Design</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Mars RO Systems</h3>
+                            <p class="text-gray-600 mb-2">Advanced Osmosis System</p>
+                            <p class="text-gray-600 text-sm">• Modern sleek design</p>
+                            <p class="text-gray-600 text-sm">• Reliable purification</p>
+                            <p class="text-gray-600 text-sm">• Easy maintenance</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Aquastic Series -->
+                    <div class="product-card rounded-xl shadow-lg overflow-hidden hover-scale">
+                        <div class="h-48 bg-gradient-to-br from-blue-600 to-teal-600 flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">AQUASTIC</div>
+                                <div class="text-sm">SMART LED INDICATOR</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Aquastic Smart RO</h3>
+                            <p class="text-gray-600 mb-2">Smart LED Indicator Technology</p>
+                            <p class="text-gray-600 text-sm">• Smart LED display</p>
+                            <p class="text-gray-600 text-sm">• Advanced purification</p>
+                            <p class="text-gray-600 text-sm">• Premium build quality</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 mb-4">All products available in our showroom with authentic warranty and service support</p>
+                    <button onclick="showQuotationForm()" 
+                            class="ownitt-gradient text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+                        Get Product Quotation
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                    <div class="w-24 h-1 ownitt-gradient mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-yellow-500 text-xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Quick, friendly, and professional service. Highly recommend!"</p>
+                        <p class="text-gray-600 font-semibold">— Sakshi R., Mumbai</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-yellow-500 text-xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Best RO consultation I've ever had. Transparent pricing too."</p>
+                        <p class="text-gray-600 font-semibold">— Aman J., Delhi</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg">
+                        <div class="text-yellow-500 text-xl mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 mb-4 italic">"Their doorstep service was lightning fast!"</p>
+                        <p class="text-gray-600 font-semibold">— Kritika N., Indore</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Why Trust Us?</h2>
+                    <div class="w-24 h-1 ownitt-gradient mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <p class="font-semibold text-gray-800">ISO 9001:2015 Certified</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-check text-white text-2xl"></i>
+                        </div>
+                        <p class="font-semibold text-gray-800">Certified RO Technicians</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-flag text-white text-2xl"></i>
+                        </div>
+                        <p class="font-semibold text-gray-800">Trusted Indian Business</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <p class="font-semibold text-gray-800">Secure Data Handling</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-white text-2xl"></i>
+                        </div>
+                        <p class="font-semibold text-gray-800">Warranty & AMC Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                    <div class="w-24 h-1 ownitt-gradient mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Customer Care</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-phone text-green-600 text-xl"></i>
+                                <a href="tel:8007532084" class="text-lg text-gray-700 hover:text-green-600">8007532084</a>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                <a href="mailto:ownittshopping@gmail.com" class="text-lg text-gray-700 hover:text-blue-600">ownittshopping@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fab fa-instagram text-pink-600 text-xl"></i>
+                                <span class="text-lg text-gray-700">@ownitt_ro_systems</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fab fa-facebook text-blue-600 text-xl"></i>
+                                <span class="text-lg text-gray-700">Ownitt RO Systems</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fab fa-twitter text-blue-400 text-xl"></i>
+                                <span class="text-lg text-gray-700">@ownitt_official</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-2xl font-bold text-gray-800 mb-2">24/7 Customer Support</p>
+                    <p class="text-gray-600">We're here to help you anytime, anywhere!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-black rounded-lg flex flex-col items-center justify-center p-1">
+                                <div class="ownitt-logo text-lg font-bold">ON</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Ownitt Ltd.</h3>
+                                <p class="text-sm text-gray-400">a step towards purity</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">Your trusted partner for pure water solutions and professional RO services.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                            <li><a href="#" onclick="showQuotationForm()" class="text-gray-400 hover:text-white transition-colors">Get Quotation</a></li>
+                            <li><a href="#" onclick="showServiceForm()" class="text-gray-400 hover:text-white transition-colors">Get Serviced</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Use</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                    <p class="text-gray-400">&copy; 2024 Ownitt Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function validateAndEnter() {
+            const mobile = document.getElementById('mobileEntry').value;
+            const errorElement = document.getElementById('mobileError');
+            
+            // Validate 10-digit Indian mobile number
+            const mobileRegex = /^[6-9]\d{9}$/;
+            
+            if (!mobileRegex.test(mobile)) {
+                errorElement.classList.remove('hidden');
+                return;
+            }
+            
+            errorElement.classList.add('hidden');
+            
+            // Save mobile number (in real implementation, this would be sent to backend)
+            localStorage.setItem('userMobile', mobile);
+            
+            // Hide entry gate and show main website
+            document.getElementById('entryGate').classList.add('hidden');
+            document.getElementById('mainWebsite').classList.remove('hidden');
+            
+            // Send email notification about new entry
+            sendEntryNotification(mobile);
+        }
+
+        function sendEntryNotification(mobile) {
+            // In real implementation, this would be handled by backend
+            const subject = 'New Website Entry - Ownitt Ltd.';
+            const body = `New user entered the website with mobile number: ${mobile}`;
+            console.log('Entry notification:', { mobile, subject, body });
+        }
+
+        function showQuotationForm() {
+            hideAllForms();
+            document.getElementById('quotationFormSection').classList.remove('hidden');
+            document.getElementById('quotationFormSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showServiceForm() {
+            hideAllForms();
+            document.getElementById('serviceFormSection').classList.remove('hidden');
+            document.getElementById('serviceFormSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideAllForms() {
+            document.getElementById('quotationFormSection').classList.add('hidden');
+            document.getElementById('serviceFormSection').classList.add('hidden');
+        }
+
+        function submitForm(event, type) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Add entry mobile number
+            data.entryMobile = localStorage.getItem('userMobile');
+            
+            // Prepare email data
+            const subject = type === 'quotation' ? 
+                'New Quotation Request - Ownitt Ltd.' : 
+                'New Service Request - Ownitt Ltd.';
+            
+            const emailBody = `
+                New ${type} request received:
+                
+                Full Name: ${data.fullName}
+                Mobile Number: ${data.mobile}
+                Address: ${data.address || 'Not provided'}
+                Entry Mobile: ${data.entryMobile}
+                
+                Submitted on: ${new Date().toLocaleString()}
+            `;
+            
+            // In real implementation, this would be sent to backend
+            console.log('Form submission:', { type, data, subject, emailBody });
+            
+            // Show success message
+            alert('Thank you! Your request has been submitted successfully. We will contact you soon.');
+            
+            // Reset form
+            form.reset();
+            hideAllForms();
+            
+            // Create mailto link as fallback
+            const mailto = `mailto:ownittshopping@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            window.open(mailto);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
